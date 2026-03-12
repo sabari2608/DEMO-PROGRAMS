@@ -1,5 +1,4 @@
 package Basics;
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,19 +12,19 @@ public class FULL_PROGRAM {
 
 		// TODO Auto-generated method stub
 
-		WebDriver d =new ChromeDriver();
+		WebDriver driver =new ChromeDriver();
 
 		System.setProperty("webdriver.chrome.driver","C:\\chromedriver\\chromedriver.exe");
 
-		d.get("https://vinothqaacademy.com/mouse-event/");
+		driver.get("https://vinothqaacademy.com/mouse-event/");
 
-		d.manage().window().maximize();
+		driver.manage().window().maximize();
 
-		WebElement draggableElement=d.findElement(By.xpath("//*[@id=\"draggableElement\"]"));
+		WebElement draggableElement=driver.findElement(By.xpath("//*[@id=\"draggableElement\"]"));
 
-		WebElement droppableElement=d.findElement(By.xpath("//*[@id=\"droppableElement\"]"));
+		WebElement droppableElement=driver.findElement(By.xpath("//*[@id=\"droppableElement\"]"));
 
-		Actions ac=new Actions(d);
+		Actions ac=new Actions(driver);
 
 		ac.dragAndDrop(draggableElement, droppableElement).build().perform();
 
@@ -35,7 +34,7 @@ public class FULL_PROGRAM {
 
 		//mouse over
 
-		WebElement textbox=d.findElement(By.xpath("//*[@id=\"textbox\"]"));
+		WebElement textbox=driver.findElement(By.xpath("//*[@id=\"textbox\"]"));
 
 		ac.moveToElement(textbox).perform();
 
@@ -45,7 +44,7 @@ public class FULL_PROGRAM {
 
 		//double click
 
-		WebElement dclick=d.findElement(By.id("dblclick"));
+		WebElement dclick=driver.findElement(By.id("dblclick"));
 
 		ac.doubleClick(dclick).build().perform();
 
@@ -97,3 +96,4 @@ public class FULL_PROGRAM {
 		
 	}
 }
+
